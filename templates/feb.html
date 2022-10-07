@@ -1,0 +1,55 @@
+{% load static %}
+<html lang="en">
+    
+<head>
+   
+    <link rel="stylesheet" href= "{% static '/styles/styles.css' %}">
+    
+    <title>Fibonacci</title>
+</head>
+
+<html>
+    
+<body>
+
+   
+
+<script>
+var fibo = function (n) 
+{
+  if (n==1) 
+  {
+var fib = [0, 1];
+   document.getElementById("output").innerHTML = fib;
+  return fib;
+  } 
+  else 
+  {
+    var s = fibo(n - 1);
+    s.push(s[s.length - 1] + s[s.length - 2]);
+    document.getElementById("output").innerHTML =s;
+    return s;
+  }
+   
+};
+
+</script>
+
+</body>
+<div class="background">
+<img src="https://d2cyt36b7wnvt9.cloudfront.net/exams/wp-content/uploads/2021/06/10012810/Fibonacci-series.png"   ></div>
+
+<p>Enter the number  </p>
+<div style="width: 100%; height: 1%; align-items: center;"></div>
+    <input type ="text" id="txt" placeholder="Enter the number" style="color: black; background-color:rgb(136, 166, 222)"/>
+
+<br><br>
+
+
+<div style="width: 100%; height: 1%; align-items: center;"></div>
+                <input type="submit" value="SUBMIT" style="font-family:'Segoe Script';font-weight:bold;font-size:200%; width: 15%; height: 10%;align-items: center;justify-content:center ;background-color:rgb(75, 94, 189);cursor:pointer;border-radius: 20px; color:rgb(63, 7, 7)" onclick="fibo(txt.value)" />
+
+<p id="text">The febonacci series are</p>
+
+<p id="output"></p>
+</html>
